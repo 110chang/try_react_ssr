@@ -6,7 +6,7 @@ const initialData = {
     name: 'World'
 }
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <App {...initialData} />,
   document.getElementById('root')
 )

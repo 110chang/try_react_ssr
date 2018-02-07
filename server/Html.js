@@ -10,7 +10,7 @@ const Html = (props) => {
         <title>Document</title>
       </head>
       <body>
-        <div id="root"></div>
+        <div id="root">{props.children}</div>
         <script src="bundle.js"></script>
       </body>
     </html>
