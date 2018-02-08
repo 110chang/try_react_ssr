@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Logo from './logo.svg'
+import Logo from './logo.svg'
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class App extends Component {
       <div>
         <h1>Hello, world!</h1>
         <p>{name}</p>
-        <img src="" alt="" />
+        <img src={Logo} alt="" />
       </div>
     )
   }
