@@ -6,8 +6,8 @@ module.exports = {
   context: `${__dirname}/server`,
   entry: './index.js',
   output: {
-    path: `${__dirname}/dist`,
-    filename: 'server.bundle.js'
+    path: `${__dirname}/server`,
+    filename: 'bundle.js'
   },
   module: {
     rules: [

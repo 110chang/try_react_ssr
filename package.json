@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
     "build": "webpack -p",
-    "server": "node ./dist/server.bundle.js",
+    "server": "node ./server/bundle.js",
     "build:server": "webpack -p --config webpack.server.js"
   },
   "keywords": [],
