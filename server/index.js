@@ -1,14 +1,12 @@
 import path from 'path'
 import express from 'express'
 
-import renderedStream from './render'
+import render from './render'
 
 const app = express()
 
 app.use(express.static(path.join(__dirname, '..', 'dist')))
 
-app.get('/', (req, res) => {
-  renderedStream.pipe(res);
-})
+app.get('/', render)
 
 app.listen(3000)

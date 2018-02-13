@@ -14,4 +14,10 @@ const renderedStream = renderToNodeStream(
   </Html>
 )
 
-export default renderedStream
+export default function render(req, res) {
+  renderToNodeStream(
+    <Html initialData={JSON.stringify(initialData)}>
+      <App {...initialData} />
+    </Html>
+  ).pipe(res)
+}
