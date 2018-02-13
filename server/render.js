@@ -1,23 +1,24 @@
 import React from 'react'
 import { renderToNodeStream } from 'react-dom/server'
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
 import Html from './Html'
 import App from '../src/App'
+
+const sheet = new ServerStyleSheet()
 
 const initialData = {
     name: 'World'
 }
 
-const renderedStream = renderToNodeStream(
-  <Html initialData={JSON.stringify(initialData)}>
-    <App {...initialData} />
-  </Html>
-)
-
-export default function render(req, res) {
+function render(req, res) {
   renderToNodeStream(
     <Html initialData={JSON.stringify(initialData)}>
-      <App {...initialData} />
+      <StyleSheetManager sheet={sheet.instance}>
+        <App {...initialData} isServer={!!req} />
+      </StyleSheetManager>
     </Html>
   ).pipe(res)
 }
+
+export default render
