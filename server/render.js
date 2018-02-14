@@ -8,7 +8,7 @@ import App from '../src/App'
 const sheet = new ServerStyleSheet()
 
 const initialData = {
-    name: 'World'
+    name: 'The world'
 }
 
 function render(req, res) {
